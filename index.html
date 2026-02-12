@@ -3,58 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>30 BEATS PACK</title>
-
+<title>R&B 2026 Beat Pack</title>
 <style>
 body{
   margin:0;
   font-family:Arial, sans-serif;
-  background:#0f0f0f;
+  background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
   color:white;
   text-align:center;
 }
-
 .top-bar{
   background:#ff3c3c;
-  padding:10px;
+  padding:12px;
   font-weight:bold;
+  font-size:16px;
 }
-
 .container{
   padding:30px 20px;
   max-width:800px;
   margin:auto;
 }
-
 h1{
-  font-size:32px;
+  font-size:36px;
   margin-bottom:10px;
 }
-
 .price{
   font-size:22px;
   margin:20px 0;
 }
-
 .price s{
   color:#888;
 }
-
 .price strong{
   color:#00ff88;
   font-size:28px;
 }
-
 .features{
   text-align:left;
   margin:30px auto;
   max-width:400px;
 }
-
 .features li{
   margin-bottom:10px;
 }
-
 button{
   background:#00ff88;
   border:none;
@@ -64,49 +55,52 @@ button{
   cursor:pointer;
   border-radius:8px;
   margin-top:20px;
+  transition: transform 0.2s, background 0.2s;
 }
-
 button:hover{
   background:#00cc6a;
+  transform: scale(1.05);
 }
-
 audio{
   width:100%;
   margin-top:15px;
 }
+.countdown{
+  color:#ff3c3c;
+  font-size:20px;
+  font-weight:bold;
+  margin-top:15px;
+}
 </style>
 </head>
-
 <body>
 
 <div class="top-bar">
-⚠️Disponível por tempo limitado
+🔥 EDIÇÃO LIMITADA – OFERTA ESPECIAL 🔥
 </div>
 
 <div class="container">
 
-<h1>30 BEATS PACK</h1>
-<p>Escute algumas prévias abaixo 👇</p>
+<h1>4AM Feelings – R&B Beat Pack</h1>
+<p style="font-size:18px; margin-bottom:20px;">
+Crie músicas profissionais com vibes de R&B moderno. Escute algumas prévias abaixo.
+</p>
 
 <!-- PREVIAS -->
 <audio controls>
-<source src="./Preview1.mp3" type="audio/mpeg">
+  <source src="./preview1.mp3" type="audio/mpeg">
 </audio>
-
 <audio controls>
-<source src="./Preview2.mp3" type="audio/mpeg">
+  <source src="./preview2.mp3" type="audio/mpeg">
 </audio>
-
 <audio controls>
-<source src="./Preview3.mp3" type="audio/mpeg">
+  <source src="./preview3.mp3" type="audio/mpeg">
 </audio>
-
-  <audio controls>
-<source src="./Preview4.mp3" type="audio/mpeg">
+<audio controls>
+  <source src="./preview4.mp3" type="audio/mpeg">
 </audio>
-
-  <audio controls>
-<source src="./Preview5.mp3" type="audio/mpeg">
+<audio controls>
+  <source src="./preview5.mp3" type="audio/mpeg">
 </audio>
 
 <div class="price">
@@ -114,17 +108,41 @@ audio{
 <strong>R$29,90</strong>
 </div>
 
+<div class="countdown">
+⏳ Oferta termina em: <span id="timer">24:00:00</span>
+</div>
+
 <ul class="features">
+<li>✔️ 30 Beats Exclusivos</li>
+<li>✔️ Arquivos WAV Alta Qualidade</li>
 <li>✔️ Uso Comercial Permitido</li>
 <li>✔️ Download Instantâneo</li>
 <li>✔️ Pagamento 100% Seguro</li>
 </ul>
 
 <a href="SEU_LINK_MERCADO_PAGO_AQUI">
-<button>COMPRAR AGORA</button>
+<button>🔥 GARANTIR MEU PACK AGORA</button>
 </a>
 
 </div>
+
+<script>
+// Contador regressivo fake de 24 horas
+let countDown = 24*60*60; 
+let timer = document.getElementById('timer');
+
+setInterval(() => {
+  let hours = Math.floor(countDown / 3600);
+  let minutes = Math.floor((countDown % 3600) / 60);
+  let seconds = countDown % 60;
+  timer.innerText = 
+    String(hours).padStart(2,'0') + ':' + 
+    String(minutes).padStart(2,'0') + ':' + 
+    String(seconds).padStart(2,'0');
+  countDown--;
+  if(countDown<0) countDown=0;
+},1000);
+</script>
 
 </body>
 </html>
